@@ -36,7 +36,7 @@ const CategoryScreen = ({ categories }) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 40,
+    paddingTop: 10,
     height: '100%',
   },
   categoryItem: {

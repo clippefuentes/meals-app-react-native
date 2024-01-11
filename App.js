@@ -6,11 +6,15 @@ import CategoryScreen from './screens/CategoryScreen';
 import { CATEGORIES } from './data/dummy-data';
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
       {/* <View style={styles.container}> */}
-        <CategoryScreen categories={CATEGORIES} />
+        
       {/* </View> */}
+      <Stack.Navigator initialRouteName='Categories'>
+        <Stack.Screen name="Categories"  component={() => <CategoryScreen categories={CATEGORIES} />}  />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
