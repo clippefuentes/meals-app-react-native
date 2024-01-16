@@ -9,12 +9,14 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-const CategoryScreen = ({ categories }) => {
+const CategoryScreen = ({ route }) => {
+  const categories = route.params.categories;
   const navigation = useNavigation();
   const renderCategoryItem = ({ item }) => {
     function goToMeal() {
       navigation.navigate("MealOverviewScreen", {
         title: item.title,
+        categoryId: item.id,
       });
     }
     return (

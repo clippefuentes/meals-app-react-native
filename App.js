@@ -14,8 +14,12 @@ export default function App() {
         
       {/* </View> */}
       <Stack.Navigator initialRouteName='Categories'>
-        <Stack.Screen name="Categories"  component={() => <CategoryScreen categories={CATEGORIES} />}  />
-        <Stack.Screen name="MealOverviewScreen"  component={() => <MealOverviewScreen  />}  />
+      <Stack.Screen
+        name="Categories"
+        component={CategoryScreen}
+        initialParams={{ categories: CATEGORIES }}
+      />
+        <Stack.Screen name="MealOverviewScreen"  component={MealOverviewScreen}  />
       </Stack.Navigator>
     </NavigationContainer>
   );
